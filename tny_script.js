@@ -11,6 +11,7 @@
 
 */
 runClock();
+setInterval("runClock()", 1000);
 
 function runClock(){
 
@@ -40,30 +41,16 @@ document.getElementById("secs").textContent=Math.ceil(secsLeft);
 
 
 
+area();
 
-function calcArea(length, width){
-   var area= length*width;
-   return area;
+
+function area(){
+   var height = Math.ceil (Math.random()*10);
+   var length= Math.ceil (Math.random()*10);
+
+   var solved= height * length;
+  
+   console.log( "The height is " +  height + " and the length is " + length + ", therefore the area of the rectangle is " + solved);
 }
-var squareArea= calcArea(6,6);
 
-console.log(squareArea);
-
-
-
-function circleArea(radius){
-   var area= Math.pow(radius, 2) + "pi";
-   return area;
-}
- var circArea= circleArea(4);
-  console.log(circArea);
-
-
-
-
-function distance(x1, y1, x2, y2){
-   var dist= Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
-   return dist;
-}
-var distanceVar= distance(1,1,4,5);
-console.log(distanceVar);
+setInterval("area()", 1000);
